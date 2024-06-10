@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caracterización de curvas I-V y P-V de un módulo fotovoltaico</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="plotly.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs/lib/browser/math.js"></script>
+  </head>
+  <body>
+    <h1>Caracterización de curvas I-V y P-V de un módulo fotovoltaico</h1>
+    <div id="container">
+      <form id="solarForm">
+        <label>Marca del módulo:</label>
+        <input type="text" id="marca" value="MarcaEjemplo" /><br />
+        <label>Referencia del módulo:</label>
+        <input type="text" id="referencia" value="RefEjemplo" /><br />
+        <label>Corriente de corto-circuito Isc (A):</label>
+        <input type="text" id="isc" value="8.5" /><br />
+        <label>Voltaje de circuito abierto Voc (V):</label>
+        <input type="text" id="voc" value="37" /><br />
+        <label>Irradiancia de operación Gop (W/m^2):</label>
+        <input type="text" id="gop" value="1000" /><br />
+        <label>Temperatura de operación Top (°C):</label>
+        <input type="text" id="top" value="25" /><br />
+        <label>Coef. temp. Isc Ki (%/°C):</label>
+        <input type="text" id="ki" value="0.05" /><br />
+        <label>Área de la celda Acelda (m^2):</label>
+        <input type="text" id="acelda" value="0.0243" /><br />
+        <label>Número de celdas en serie Ns:</label>
+        <input type="text" id="ns" value="72" /><br />
+        <label>Número de celdas en paralelo Np:</label>
+        <input type="text" id="np" value="1" /><br />
+        <label>Factor de idealidad n:</label>
+        <input type="text" id="n" value="1.3" /><br />
+        <label>Resistencia serie Rs (Ω):</label>
+        <input type="text" id="rs" value="0.004" /><br />
+        <label>Resistencia shunt Rsh (Ω):</label>
+        <input type="text" id="rsh" value="500" /><br />
+        <label>Pmax fabricante (W):</label>
+        <input type="text" id="pmax" value="250" /><br />
+        <button type="button" onclick="runSimulation()">Simular</button>
+      </form>
+      <div id="info"></div>
+    </div>
+    <div id="plotIV" style="width: 80%; height: 500px; margin-top: 20px"></div>
+    <div id="plotPV" style="width: 80%; height: 500px; margin-top: 20px"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
